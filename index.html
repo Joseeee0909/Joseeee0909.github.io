@@ -112,9 +112,29 @@
   <h2>4. Docker</h2>
   <p><strong>Instalación y ejecución de contenedores personalizados:</strong></p>
   <pre><code># Dockerfile
-FROM ubuntu:latest
-RUN apt update && apt install -y vim curl git
-CMD ["/bin/bash"]</code></pre>
+FROM ubuntu:22.04
+
+# Actualiza los paquetes
+RUN apt update && apt upgrade -y
+
+# Instala las aplicaciones que necesitas
+RUN apt install -y vim nano wget curl
+
+# Instala LibreOffice (ofimática)
+RUN apt install -y libreoffice
+
+# Instala Geany (editor ligero de código)
+RUN apt install -y geany
+
+RUN sed -i 's|https://.*.ubuntu.com|http://archive.ubuntu.com|g' /etc/apt/sources.list
+
+RUN apt install -y gimp gparted emacs x11-apps
+
+# Evita errores de interacción al instalar
+ENV DEBIAN_FRONTEND=noninteractive
+
+CMD ["/bin/bash"]
+</code></pre>
   <div class="media">
     <img src="img/dockerDesktop.png" alt="Docker en ejecución">
     
