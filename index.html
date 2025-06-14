@@ -202,6 +202,19 @@ spec:
       
       <p>Creacion de un pod con la versión Ubuntu de Linux:</p>
       <video src="videos/pods.mp4" controls width="640" height="360" style="margin-top: 20px; margin-bottom: 20px;"></video>
+
+      <p>Archivo pod.yaml usado:</p>
+      <pre><code>apiVersion: v1
+    kind: Pod
+    metadata:
+      name: pod-ubuntu
+    spec:
+      containers:
+      - name: ubuntu-container
+        image: ubuntu
+        command: ["/bin/bash", "-c", "--"]
+        args: ["while true; do sleep 30; done;"]
+        </code></pre>
       
     </section>
 
@@ -209,7 +222,7 @@ spec:
     <section>
       <h2>7. Evidencias del Proyecto</h2>
       <div class="media">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="Video del Proyecto" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://drive.google.com/file/d/1bkiJ9Pl-wSYWkDLPscEttx-h_KUD9HDl/preview" width="640" height="480" allow="autoplay"></iframe>
       </div>
     </section>
   </main>
